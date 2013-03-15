@@ -75,10 +75,14 @@
 {
     self.navigationItem.title = @"Loading";
     
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone 
-                                                                                           target:self 
-                                                                                           action:@selector(doneButtonAction:)];
+    UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                                       target:self
+                                                                                       action:@selector(doneButtonAction:)];
     
+    UIColor *lightBlue = [UIColor colorWithRed:0.29f green:0.82f blue:1.00f alpha:1.00f];
+    
+    [doneBarButtonItem setTintColor:lightBlue];
+    self.navigationItem.rightBarButtonItem = doneBarButtonItem;
     
     // TableView configuration.
     self.tableView.contentInset = TABLEVIEW_INSETS;
